@@ -1,0 +1,136 @@
+$mainColor: #EA2000;
+$normalColor: #ddd;
+$fontSize: 12px;
+$radius: 5px;
+$layoutSize: 10px;
+@mixin container($w, $h, $bc, $br, $top:0, $right:0, $bottom:0, $left:0){
+    width: $w;
+    height: $h;
+    min-height: 400px;
+    border:{
+        width: 1px;
+        color: $bc;
+        style: solid;
+        radius: $br;
+    };
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+// h1{
+//     color:red;
+//     font-size: 18px;
+//     background-color: $mainColor;
+//     border: 1px solid #000;
+//     padding: 10px;
+//     border-radius: 5px;
+//     display: flex;
+//     justify-content: center;
+// }
+.container {
+    font-size: $fontSize * 1.5;
+    position: relative;
+    @include container(800px,auto,$mainColor,5px,10px,auto,0,auto);
+
+}
+.addTodo {
+    display: flex;
+    justify-content: center;
+    margin:{
+        top: $layoutSize;
+        bottom: $layoutSize/2;
+    }
+    border:{
+        radius: 5px;
+        color: $normalColor;
+    }
+    input {
+        padding: $layoutSize/4 $layoutSize/2;
+        outline: none;
+        width: 300px;
+        height: $layoutSize * 2.5;
+    }
+    button {
+        border: none;
+        border:{
+            radius: $radius * 1.2;
+        }
+        margin:{
+            left: $layoutSize;
+        }
+        width: 100px;
+        background-color: $mainColor;
+        color: $normalColor;
+        padding:{
+            left: $layoutSize/2;
+            right: $layoutSize/2;
+            top: $layoutSize/4;
+            bottom: $layoutSize/4;
+        }
+        outline: none;
+    }
+}
+.todoList {
+    padding:{
+        left: $layoutSize;
+        right: $layoutSize;
+    }
+    margin:{
+        bottom: 85px;
+    }
+    li {
+        background-color: #f6d6d6;
+        list-style: none;
+        height: $layoutSize * 3;
+        line-height: $layoutSize * 3;
+        padding:{
+            left: $layoutSize/2;
+        }
+        margin:{
+            top: $layoutSize/5;
+        }
+    }
+}
+@mixin footerBtn($borderColor,$bgColor,$fontColor){
+      display: inline-block;
+        padding:{
+            top: $layoutSize/2;
+            bottom: $layoutSize/2;
+            left: $layoutSize;
+            right: $layoutSize;
+        }
+        border:{
+            radius: $radius;
+            color: $borderColor;
+            style: solid;
+        }
+        background-color: $bgColor;
+        color: #{$fontColor};
+        margin:{
+            left: $layoutSize;
+        }
+}
+.footer {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:{
+        left: $layoutSize;
+        top: $layoutSize/2;
+        bottom: $layoutSize/2;
+    }
+    a,i {
+        @include footerBtn($normalColor,$normalColor,"#1d1d1d");
+    }
+    a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+    span{
+        background-color: $mainColor;
+        color: #fff;
+        @include footerBtn($mainColor,$mainColor,"#fff");
+    }
+}

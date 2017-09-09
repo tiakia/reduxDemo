@@ -1,0 +1,71 @@
+sass的几个可以运用的特点
+1.sass可以定义变量
+        $mainColor : #f10180;
+        $normalColor : #ddd;
+        $fontSize : 1rem;
+        $radius : 5px;
+        $side : left;
+    使用：
+        background-color: $mainColor;
+        font-size: $fontSize * 1.2;
+        border-radius: $radius;
+        border-${$side}-radius: $radius * 2;
+2.sass可以嵌套
+        div{
+             border-radius: $radius;
+             span {
+                  color: $mainColor;
+             }
+        }
+        或：
+        div{
+            border:{
+                color: $mainColor;
+                radius: $radius;
+                style: solid;
+            }
+            span{
+                color: $maincolor;
+            }
+        }
+    在嵌套的代码块内可以引用父元素
+        a{
+                color: $normalcolor;
+                &:hover {
+                        color: $mainColor;
+                        text-decoration: none;
+                  }
+        }
+3.一个选择器可以继承另一个选择器
+        .class1 {
+            border:{
+                radius: $radius;
+                color: $normalcolor;
+            }
+        }
+        .class2 {
+            @extend .class1;
+            font-size: $fontSize;
+        }
+4.类似函数的@mixin
+        @mixin container($w, $h, $r, $top:0, $right:0, $bottom:0, $left:0) {
+            width: $w;
+            height: $h;
+            border-radius: $r;
+            margin-top: $top;
+            margin-right: $right;
+            margin-bottom: $bottom;
+            margin-left: $left;
+        }
+        div{
+            @include container(300px,150px,5px,10px);
+        }
+5.可以if/else条件判断，for循环
+        $list: (orange, purple, teal);
+
+        @each $item in $list {
+              .#{$item} {
+                    background: $item;
+              }
+        }
+     注意：这里如果插入的字符串应该用 #{} 这样才能显示出来
