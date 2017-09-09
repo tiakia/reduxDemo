@@ -1,5 +1,5 @@
 # reduxDemo
-联系redux的todoList 使用了sass，配置好的webpack
+练习redux的todoList 使用了sass，配置好的webpack
 #### webpack配置支持
 1、支持es6的语法  
 2、支持sass,css  
