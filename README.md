@@ -11,6 +11,14 @@
 8、 提取公共模块的代码  
 ----------待验证的，不确定的-----------------------------  
 9、 压缩图片和字体文件
+![webpack-dev-server](http://ostu98x74.bkt.clouddn.com/webpackwebpack-error.png)
+
+```
+netstat -aon | findsrt 9000  #9000是你启服的端口
+
+taskkill /f -pid 13944  #最后一个就是占用进程的id号，在这里kill掉，再运行就好了
+```
+
 #### 页面截图
 ![all](http://ostu98x74.bkt.clouddn.com/redux/all.png)
 ![completed](http://ostu98x74.bkt.clouddn.com/redux/completed.png)
