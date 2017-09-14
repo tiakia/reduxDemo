@@ -10,7 +10,9 @@
 7、 把嵌入js代码中的css提取出来  
 8、 提取公共模块的代码  
 ----------待验证的，不确定的-----------------------------  
-9、 压缩图片和字体文件
+9、 压缩图片和字体文件  
+
+
 ![webpack-dev-server](http://ostu98x74.bkt.clouddn.com/webpackwebpack-error.png)
 
 ```
