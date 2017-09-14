@@ -13,5 +13,5 @@
 9、 压缩图片和字体文件
 #### 页面截图
 ![all](http://ostu98x74.bkt.clouddn.com/redux/all.png)
-![active](http://ostu98x74.bkt.clouddn.com/redux/completed.png)
+![completed](http://ostu98x74.bkt.clouddn.com/redux/completed.png)
 ![active](http://ostu98x74.bkt.clouddn.com/redux/active.png)
